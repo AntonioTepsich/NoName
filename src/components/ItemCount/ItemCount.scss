@@ -4,21 +4,12 @@
 }
 
       .prod-quant{
-        border-top: 1px solid #d5685e;
-        width: 60%;
-        padding: 8px 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        
         .prod-qty{
           display: flex;
           align-items: center;
           justify-content: center;
           margin-top: 8px;
-          button{
-            font-size: 14px;
-          }
+
           .buttonRem,.buttonAdd{
             cursor: pointer;
             transition: all 0.2s ease-in;
@@ -26,7 +17,7 @@
             color: white;
             border: none;
             &:hover{
-             background: #d5685e;
+             background: #f0c040;
             }  
           }
           .buttonAdd{
@@ -65,43 +56,23 @@
             justify-content: center;
             padding: 0;
             margin: 0;
-            button{
-              color: #666;
-              font-size: 14px;
-              padding: 0;
-              margin: 0;
-            }
           }
         }
       }
       
       .prod-cta-order{
-        background: #d5685e;
         padding: 8px 15px;
         margin: 8px 0 0 0;
         border-radius: 0px;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
         vertical-align: middle;
-        &:hover{
-          background: darken(#d5685e,10%);
-        }
+        display: flex;
+        justify-content: center;
+
         button{
-          margin: 0;
-          color: white;
-          padding: 10px;
           .cart{
             margin-right: 4px;
           }
         }
       }
-
-
-@keyframes slide-in{
-  0%{
-    transform: rotateY(-90deg);
-  }
-  100%{
-    transform: rotateY(0deg);
-  }
-}

@@ -1,44 +1,26 @@
 import React from 'react';
-import ItemCount from '../ItemCount/ItemCount';
 import './Item.scss'
+import { useNavigate } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 
-const Item = ({product}) => {
-    const handleAdd= () =>{
-        console.log("Se agregó al carrito")
-      }
+const Item = ({name, imagen, precio, id }) => {
+  const navigation=useNavigate();
+
+  const handleAdd= () =>{
+    console.log("Navega hacia el detail");
+    navigation(`/detail/${id}`)
+  }
   return (
-    <div className="product-container" id={product.id}>
-      <div className="product-card">
-        <div className="card-img">
-          <img src={product.img} alt="" />
-        </div>
-      
-        <div className="card-info">
-          
-          <h2 className="name">
-            Buzo
-            <br/>
-            {product.name}
-          </h2>
-          <h3 className="price">${product.price}</h3>
-          <span className="rating">
-            <FontAwesomeIcon className='i' icon={faStar}/>
-            <FontAwesomeIcon className='i' icon={faStar}/>
-            <FontAwesomeIcon className='i' icon={faStar}/>
-            <FontAwesomeIcon className='i' icon={faStar}/>
-            <FontAwesomeIcon className='i' icon={faStar}/>
-          </span>
-          <p>({product.review})</p>
-        </div>
-        <div className="card-description">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra ornare eros in imperdiet. </p>
-            <ItemCount stock={product.stock} qty={1} handleAdd={handleAdd}/>
-        </div>
-      </div>
-    </div>
+      <Card onClick={handleAdd}>
+            <img src={imagen} alt={name} className="card-img-top"/>
+          <Card.Body>
+              <Card.Title>{name}</Card.Title>
+              <Card.Text>${precio}</Card.Text>
+              <Button>Add to cart</Button>
+          </Card.Body>  
+      </Card>
   )
 }
 

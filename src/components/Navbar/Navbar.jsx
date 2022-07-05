@@ -1,19 +1,19 @@
 import React from 'react';
-
 import './Navbar.scss';
 import avatar from '../../assets/avatar.png';
 import {CartWidget} from '../index';
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
   return (
-    <header className='fixed z-50 w-screen p-6 px-16'>
+    <header className='sticky z-50 w-screen p-6 px-16 top-0'>
       <div className='hidden md:flex w-full h-full items-center justify-between'>
         <div className='flex items-center gap-2'>
             <p className='text-headingColor text-xl font-bold'>NoName</p>
         </div>
         <div className=' flex items-center gap-8'>
             <ul className='flex items-center gap-8 '>
-                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>Inicio</li>
+                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to='/'>Inicio</Link></li>
                 <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>Testimonios</li>
                 <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>Nosotros</li>
                 <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>Buzos</li>

@@ -3,9 +3,13 @@ import './ItemCount.scss';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
-import {  } from '@fortawesome/free-regular-svg-icons';
+import Button from 'react-bootstrap/Button';
 
-const ItemCount = ({handleAdd, stock, qty}) => {
+const ItemCount = ({stock, qty}) => {
+
+  const handleAdd= () =>{
+    console.log(`Se agregó al carrito `);
+  }
 
     const [count,setCount]=useState(qty)
 
@@ -23,7 +27,6 @@ const ItemCount = ({handleAdd, stock, qty}) => {
   return (
     <div>
       <div className="prod-quant">
-        <span>Cantidad</span>
         <span className="prod-qty">
           <button onClick={onDec} className='buttonRem'>-</button>
           <span className="qty-value">
@@ -33,10 +36,10 @@ const ItemCount = ({handleAdd, stock, qty}) => {
         </span>
       </div>
       <div className="prod-cta-order">
-        <button onClick={handleAdd} className="cta-text">
+        <Button onClick={handleAdd} className="cta-text">
           <FontAwesomeIcon className='cart' icon={faCartArrowDown} />
           AGREGAR
-        </button>
+        </Button>
       </div>
     </div>
   )

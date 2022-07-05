@@ -1,15 +1,21 @@
 import React from 'react';
-import './App.css';
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar} from './components';
-import {ItemListContainer} from './container'
-
+import {ItemListContainer, ItemDetailContainer} from './container';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <ItemListContainer></ItemListContainer>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<ItemListContainer />}/>
+          <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
