@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.scss';
 import Row from 'react-bootstrap/Row';
@@ -6,8 +6,26 @@ import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Badge from 'react-bootstrap/Badge';
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
+import { Shop } from '../../context/ShopProvider';
+
 
 const ItemDetail = ({product}) => {
+
+  const {addItem} = useContext(Shop);
+
+  const navigate = useNavigate();
+
+  const [qtyAdded, setQtyAdded] = useState(0);
+  
+  const handleConfirm = (qty) => {
+    setQtyAdded(qty);
+  };
+
+  const handleTerminate = () => {
+    addItem(product, qtyAdded)
+    navigate('/cart')
+  }
   
   return (
     <div>
@@ -44,7 +62,11 @@ const ItemDetail = ({product}) => {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <div className='d-grid'>
-                    <ItemCount qty={1} stock={ 10 } /> 
+                    {!qtyAdded ?
+                      <ItemCount onConfirm={handleConfirm} stock={ 10 } /> 
+                      :
+                      <button onClick={handleTerminate} >Terminar Compra</button>
+                    }
                   </div>
                 </ListGroup.Item>
               </ListGroup>

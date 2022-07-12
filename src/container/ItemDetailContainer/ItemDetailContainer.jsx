@@ -25,7 +25,6 @@ const ItemDetailContainer = () => {
   }, [params])
 
   return (
-    // <ItemDetail product={productDetail} />
     <div>
       <ItemDetail product={productDetail}/>
     </div>

@@ -2,20 +2,24 @@ import React from 'react';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar} from './components';
-import {ItemListContainer, ItemDetailContainer} from './container';
+import {ItemListContainer, ItemDetailContainer, Cart} from './container';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ShopProvider from './context/ShopProvider';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<ItemListContainer />}/>
-          <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <ShopProvider>
+      <BrowserRouter>
+        <div>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<ItemListContainer />}/>
+            <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
+            <Route path='/cart' element={<Cart />}/>
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </ShopProvider>
   );
 }
 
