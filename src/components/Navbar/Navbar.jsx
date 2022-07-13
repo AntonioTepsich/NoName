@@ -13,10 +13,11 @@ export const Navbar = () => {
         </div>
         <div className=' flex items-center gap-8'>
             <ul className='flex items-center gap-8 '>
-                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to='/'>Inicio</Link></li>
-                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>Testimonios</li>
-                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>Nosotros</li>
-                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>Buzos</li>
+                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to='/'>INICIO</Link></li>
+                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to="/category/electronics">ELECTRONICA</Link></li>
+                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to="/category/jewelery">JOYERIA</Link></li>
+                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to="/category/women's clothing">MUJERES</Link></li>
+                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to="/category/men's clothing">HOMBRES</Link></li>
             </ul>
 
             <CartWidget />
