@@ -20,7 +20,7 @@ export const Navbar = () => {
                 <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to="/category/men's clothing">HOMBRES</Link></li>
             </ul>
 
-            <CartWidget />
+            <Link to='/cart'><CartWidget/></Link>
             <img src={avatar} className='w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full' alt="usuario" />
         </div>
       </div>

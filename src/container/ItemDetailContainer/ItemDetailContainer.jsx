@@ -19,9 +19,7 @@ const ItemDetailContainer = () => {
         console.log(error)
       }
     }
-    setTimeout(()=> {
-      getItem()
-    }, 2000);
+    getItem()
   }, [params])
 
   return (

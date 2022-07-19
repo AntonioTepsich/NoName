@@ -9,7 +9,7 @@ const ItemList = ({}) => {
 
   const [products, setProducts]=useState([]);
   const params = useParams();
-  console.log(params);
+
 
   useEffect(()=>{
     const getProducts= async()=>{
@@ -33,7 +33,7 @@ const ItemList = ({}) => {
       {
         products.map((prenda)=>{
           return(
-            <Col sm={6} md={4} lg={3} className="mb-3">
+            <Col key={prenda.id} sm={6} md={4} lg={3} className="mb-3">
               <Item name={prenda.title}
                       imagen={prenda.image}
                       precio={prenda.price}

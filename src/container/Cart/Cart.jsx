@@ -5,11 +5,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 
 const Cart = () => {
 
     const {cart, deletItem} = useContext(Shop);
+
+
   return (
     <>
     <h1>Orden de compra</h1>
@@ -23,7 +26,7 @@ const Cart = () => {
           ) : (
             <ListGroup>
               {cart.map((producto) => (
-                <ListGroup.Item key={producto._id}>
+                <ListGroup.Item key={producto.id}>
                   <Row className="align-items-center">
                     <Col md={4}>
                       <img
@@ -36,7 +39,7 @@ const Cart = () => {
                     <Col md={3}>
                       <span> CANTIDAD: {producto.quantity}</span>{' '}
                     </Col>
-                    <Col md={3}>${producto.price}</Col>
+                    <Col md={3}>SUBTOTAL: ${producto.quantity * producto.price}</Col>
                     <Col md={2}>
                       <Button
                         onClick={() => deletItem(producto.id)}>DELETE
@@ -44,8 +47,8 @@ const Cart = () => {
                     </Col>
                   </Row>
                 </ListGroup.Item>
-              ))}
-            </ListGroup>
+            ))}
+          </ListGroup>
           )}
         </Col>
       </Row>

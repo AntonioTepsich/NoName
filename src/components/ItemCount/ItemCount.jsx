@@ -18,6 +18,12 @@ const ItemCount = ({onConfirm, stock}) => {
       }
     };
 
+    const handleAdd = () => {
+      if ( count < stock) {
+        setCount(count + 1)
+      }
+    }
+
   return (
     <div>
       <div className="prod-quant">
@@ -26,7 +32,7 @@ const ItemCount = ({onConfirm, stock}) => {
           <span className="qty-value">
             <span>{count}</span>
           </span>
-          <button onClick={() => setCount(count => count+1)} className='buttonAdd'>+</button> 
+          <button onClick={handleAdd} className='buttonAdd'>+</button> 
         </span>
       </div>
       <div className="prod-cta-order">
