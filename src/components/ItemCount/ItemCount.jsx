@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 import Button from 'react-bootstrap/Button';
 
+
 const ItemCount = ({onConfirm, stock}) => {
 
     const [count,setCount]=useState(1)
@@ -23,12 +24,17 @@ const ItemCount = ({onConfirm, stock}) => {
         setCount(count + 1)
       }
     }
+    const handleSubstract = () => {
+      if (count > 0) {
+        setCount(count - 1)
+      }
+    }
 
   return (
     <div>
       <div className="prod-quant">
         <span className="prod-qty">
-          <button onClick={() => setCount(count => count-1)} className='buttonRem'>-</button>
+          <button onClick={handleSubstract} className='buttonRem'>-</button>
           <span className="qty-value">
             <span>{count}</span>
           </span>
@@ -40,6 +46,7 @@ const ItemCount = ({onConfirm, stock}) => {
           <FontAwesomeIcon className='cart' icon={faCartArrowDown} />
           AGREGAR
         </Button>
+
       </div>
     </div>
   )

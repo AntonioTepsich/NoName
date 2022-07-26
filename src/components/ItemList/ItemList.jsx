@@ -5,22 +5,30 @@ import { useParams } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const ItemList = ({}) => {
+import { collection, query, getDocs } from "firebase/firestore";
+import { db } from '../../firebase/config';
+
+const ItemList = () => {
 
   const [products, setProducts]=useState([]);
   const params = useParams();
 
 
-  useEffect(()=>{
-    const getProducts= async()=>{
-      try{
-        const response= await fetch('https://fakestoreapi.com/products');
-        const data = await response.json();
-        let productosFiltrados = [...data];
+  useEffect( () => {
+    const getProducts = async () => {
+      try {
+        //algoritmoGuardadoAutomatico() // >> Funcion para cargar productos programaticamente            
+        const q = query(collection(db, "products"));
+        const querySnapshot = await getDocs(q);
+        const productos = []
+        querySnapshot.forEach((doc) => {
+        productos.push({id: doc.id, ...doc.data()})
+        });
+        let productosFiltrados = [...productos];
         if (params?.categoryId) {
           productosFiltrados = productosFiltrados.filter(producto => producto.category === params.categoryId)
-        } 
-        setProducts(productosFiltrados);
+        }          // >>>>> ".?" se llama opcional chaining, significa que si "params" viene undefined NO va a hacer lo que indica el IF
+        setProducts(productosFiltrados)
       } catch(error) {
         console.log(error);
       }

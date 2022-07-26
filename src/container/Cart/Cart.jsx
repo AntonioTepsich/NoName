@@ -5,14 +5,18 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import ordenGenerada from '../../utils/generarOrden';
+import guardarOrden from '../../utils/guardaOrden';
 
 
 const Cart = () => {
 
-    const {cart, deletItem} = useContext(Shop);
+  const {cart, deletItem} = useContext(Shop);
 
-
+  const confirmarOrden = async () => {
+    const orden = ordenGenerada("Bruno", "Av. Siempre Viva 745", cart, 4500);
+    guardarOrden(cart, orden)
+  }
   return (
     <>
     <h1>Orden de compra</h1>
@@ -48,6 +52,7 @@ const Cart = () => {
                   </Row>
                 </ListGroup.Item>
             ))}
+            <button onClick={confirmarOrden}>Confirmar Orden</button>
           </ListGroup>
           )}
         </Col>

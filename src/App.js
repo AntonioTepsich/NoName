@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Navbar} from './components';
+import {Navbar, Footer} from './components';
 import {ItemListContainer, ItemDetailContainer, Cart} from './container';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ShopProvider from './context/ShopProvider';
@@ -18,6 +18,7 @@ function App() {
             <Route path='/detail/:productId' element={<ItemDetailContainer />}/>
             <Route path='/cart' element={<Cart />}/>
           </Routes>
+          <Footer />
         </div>
       </BrowserRouter>
     </ShopProvider>
