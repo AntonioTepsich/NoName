@@ -1,7 +1,7 @@
 import React from 'react';
+import ItemList from '../../components/ItemList/ItemList';
 import './ItemListContainer.scss';
 
-import ItemList from '../../components/ItemList/ItemList';
 
 
 

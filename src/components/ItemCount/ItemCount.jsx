@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 import Button from 'react-bootstrap/Button';
-
+import Swal from "sweetalert2";
 
 const ItemCount = ({onConfirm, stock}) => {
 
@@ -15,7 +15,11 @@ const ItemCount = ({onConfirm, stock}) => {
         onConfirm(count)
       } 
       else {
-        alert("count > stock")
+        Swal.fire({
+          icon: "alert",
+          title: "Ups, lamentamos el incoveniente.",
+          text: "Producto fuera de stock",
+        });
       }
     };
 

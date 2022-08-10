@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
-
+import Loading from "../Loading/Loading";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '../../firebase/config';
 
@@ -31,10 +31,10 @@ const ItemDetailContainer = () => {
     getItem()
   }, [params])
 
-  return (
-    <div>
-      <ItemDetail product={productDetail}/>
-    </div>
+  return Object.keys(productDetail).length !== 0 ? (
+    <ItemDetail product={productDetail} />
+  ) : (
+    <Loading />
   );
 }
 

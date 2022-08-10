@@ -65,7 +65,7 @@ const ItemDetail = ({product}) => {
                     {!qtyAdded ?
                       <ItemCount onConfirm={handleConfirm} stock={ 10 } /> 
                       :
-                      <button onClick={handleTerminate} >Terminar Compra</button>
+                      <button onClick={handleTerminate} className="terminar-compra">Terminar Compra</button>
                     }
                   </div>
                 </ListGroup.Item>

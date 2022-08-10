@@ -1,50 +1,18 @@
 [
-    {
-      "name": "Nike Slim shirt",
-      "slug": "nike-slim-shirt",
-      "category": "Shirts",
-      "image": "/assets/img/horizon_portada.jpg", 
-      "price": 120,
-      "countInStock": 10,
-      "brand": "Nike",
-      "rating": 4.5,
-      "numReviews": 10,
-      "description": "high quality shirt"
-    },
-    {
-      "name": "Adidas Fit Shirt",
-      "slug": "adidas-fit-shirt",
-      "category": "Shirts",
-      "image": "/assets/img/halo_portada.jpg",
-      "price": 250,
-      "countInStock": 20,
-      "brand": "Adidas",
-      "rating": 4.0,
-      "numReviews": 10,
-      "description": "high quality product"
-    },
-    {
-      "name": "Nike Slim shirt",
-      "slug": "nike-slim-shirt",
-      "category": "Shirts",
-      "image": "/assets/img/horizon_portada.jpg", 
-      "price": 120,
-      "countInStock": 10,
-      "brand": "Nike",
-      "rating": 4.5,
-      "numReviews": 10,
-      "description": "high quality shirt"
-    },
-    {
-      "name": "Adidas Fit Shirt",
-      "slug": "adidas-fit-shirt",
-      "category": "Shirts",
-      "image": "/assets/img/halo_portada.jpg",
-      "price": 250,
-      "countInStock": 20,
-      "brand": "Adidas",
-      "rating": 4.0,
-      "numReviews": 10,
-      "description": "high quality product"
-    }
-  ]
+  {
+      "id": 1,
+      "title": "KTM - Duke 390",
+      "price": 10700,
+      "description": "La KTM 390 Duke es uno de los modelos referencia del segmento de las motos naked de 300 por potencia, tecnología y diseño. Una moto naked apta para el carnet de moto A2 utilizable a diario y que permite disfrutar de rutas de fin de semana.",
+      "category": "electronics",
+      "image": "https://firebasestorage.googleapis.com/v0/b/noname-9c8e4.appspot.com/o/ktm390duke.png?alt=media&token=04844664-b174-4124-bc38-fde3df35570a"
+  },
+  {
+      "id": 2,
+      "title": "KTM - Adventure 390",
+      "price": 13000,
+      "description": "Como su propio nombre indica, la KTM 390 Adventure cuenta con el mismo motor monocilíndrico de 373 cc que las 390 Duke y RC 390, que rinde 44 cv de potencia y 37 Nm de par. Uno de los gadgets más interesantes frente a la competencia es el cambio rápido de doble sentido. También disfrutas de una pantalla TFT a color en la que puedes disfrutar de la conectividad con la app KTM My Ride. Además, dispones de la configuración del control de tracción o el ABS off-road ideal para circular por caminos.",
+      "category": "KTM",
+      "image": "https://firebasestorage.googleapis.com/v0/b/noname-9c8e4.appspot.com/o/ktm390adv.png?alt=media&token=1facb345-f5e1-4e2d-933d-52078449b2d4"
+  }
+]

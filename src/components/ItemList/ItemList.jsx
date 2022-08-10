@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import Loading from "../Loading/Loading";
+import './ItemList.scss';
 import { collection, query, getDocs } from "firebase/firestore";
 import { db } from '../../firebase/config';
 
@@ -26,7 +27,7 @@ const ItemList = () => {
         });
         let productosFiltrados = [...productos];
         if (params?.categoryId) {
-          productosFiltrados = productosFiltrados.filter(producto => producto.category === params.categoryId)
+          productosFiltrados = productosFiltrados.filter((producto) => producto.category === params.categoryId)
         }          // >>>>> ".?" se llama opcional chaining, significa que si "params" viene undefined NO va a hacer lo que indica el IF
         setProducts(productosFiltrados)
       } catch(error) {
@@ -38,7 +39,7 @@ const ItemList = () => {
   
   return (
     <Row>
-      {
+      {products.length ? (
         products.map((prenda)=>{
           return(
             <Col key={prenda.id} sm={6} md={4} lg={3} className="mb-3">
@@ -49,7 +50,9 @@ const ItemList = () => {
             </Col>
           )
         })
-      }
+        ) : (
+          <Loading />
+      )}
     </Row>
     
   )

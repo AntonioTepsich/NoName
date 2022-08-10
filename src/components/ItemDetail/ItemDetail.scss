@@ -1,3 +1,22 @@
 .img-large{
     max-width: 100%;
 }
+
+.terminar-compra {
+    width: 300px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: black;
+    color: whitesmoke;
+    cursor: pointer;
+    margin: 30px;
+    font-size: 18px;
+}
+
+.terminar-compra:hover {
+    background-color: #E74C2B;
+    transition: 1s;
+}
