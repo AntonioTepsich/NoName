@@ -63,7 +63,7 @@ const ItemDetail = ({product}) => {
                 <ListGroup.Item>
                   <div className='d-grid'>
                     {!qtyAdded ?
-                      <ItemCount onConfirm={handleConfirm} stock={ 10 } /> 
+                      <ItemCount onConfirm={handleConfirm} stock={product.stock} /> 
                       :
                       <button onClick={handleTerminate} className="terminar-compra">Terminar Compra</button>
                     }

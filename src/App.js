@@ -1,6 +1,6 @@
 import React from 'react';
-import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 import {Navbar, Footer, NotFound} from './components';
 import {ItemListContainer, ItemDetailContainer, Cart} from './container';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';

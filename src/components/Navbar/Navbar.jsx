@@ -14,10 +14,9 @@ export const Navbar = () => {
         <div className=' flex items-center gap-8'>
             <ul className='flex items-center gap-8 '>
                 <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to='/'>INICIO</Link></li>
-                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to="/category/electronics">ELECTRONICA</Link></li>
-                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to="/category/jewelery">JOYERIA</Link></li>
-                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to="/category/women's clothing">MUJERES</Link></li>
-                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to="/category/men's clothing">HOMBRES</Link></li>
+                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to="/category/BMW">BMW</Link></li>
+                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to="/category/Ford">Ford</Link></li>
+                <li className='text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to="/category/Audi">Audi</Link></li>
             </ul>
 
             <Link to='/cart'><CartWidget/></Link>

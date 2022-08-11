@@ -18,7 +18,6 @@ const ItemList = () => {
   useEffect( () => {
     const getProducts = async () => {
       try {
-        //algoritmoGuardadoAutomatico() // >> Funcion para cargar productos programaticamente            
         const q = query(collection(db, "products"));
         const querySnapshot = await getDocs(q);
         const productos = []
@@ -28,7 +27,7 @@ const ItemList = () => {
         let productosFiltrados = [...productos];
         if (params?.categoryId) {
           productosFiltrados = productosFiltrados.filter((producto) => producto.category === params.categoryId)
-        }          // >>>>> ".?" se llama opcional chaining, significa que si "params" viene undefined NO va a hacer lo que indica el IF
+        }          
         setProducts(productosFiltrados)
       } catch(error) {
         console.log(error);
@@ -46,7 +45,8 @@ const ItemList = () => {
               <Item name={prenda.title}
                       imagen={prenda.image}
                       precio={prenda.price}
-                      id={prenda.id}/>
+                      id={prenda.id}
+                      stock={prenda.stock}/>
             </Col>
           )
         })
